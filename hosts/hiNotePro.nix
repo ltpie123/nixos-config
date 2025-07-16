@@ -14,7 +14,6 @@
     hashedPassword = null; # Will be set during installation
     openssh.authorizedKeys.keys = [
       # Add your SSH public key here for remote access
-      ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINRrsIvvZjshnQLLHcSRGkzVWQAVaoVo+eAg6cN8xFwj ltpie12345+github@gmail.com
     ];
   };
 
