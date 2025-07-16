@@ -86,8 +86,6 @@
     # Additional Go tools
     gopls
     
-
-    
     # Additional Ruby tools
     rubyPackages.bundler
     rubyPackages.jekyll
