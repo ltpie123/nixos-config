@@ -15,6 +15,11 @@ A comprehensive NixOS configuration with Hyprland, gaming support, and developme
 - **Virtualization**: QEMU/KVM with GPU passthrough for Windows VMs
 - **Security**: Enhanced security settings and firewall
 - **Performance**: Optimized for gaming and development
+- **Applications**: Comprehensive application suite including browsers, productivity tools, and utilities
+- **Shell Tools**: Enhanced shell experience with modern replacements (eza, bat, fd, ripgrep)
+- **System Monitoring**: Advanced system monitoring and performance tools
+- **Media Tools**: Complete media playback and editing suite
+- **Network Tools**: Comprehensive networking utilities and VPN support
 
 ## Structure
 
@@ -30,7 +35,10 @@ nixos-config/
 │   ├── nvim.nix            # Neovim and development tools
 │   ├── doom-emacs.nix      # Doom Emacs configuration
 │   ├── security.nix        # Security and firewall settings
-│   └── development.nix     # Development environment
+│   ├── development.nix     # Development environment
+│   ├── razer-blade.nix     # Razer Blade optimizations
+│   ├── virtualization.nix  # Virtualization support
+│   └── applications.nix    # Additional applications and tools
 └── home/
     └── default.nix         # Home-manager configuration
 ```
@@ -55,9 +63,111 @@ nixos-config/
 
 3. **Boot from USB**:
    - Restart your computer
-   - Boot from the USB drive
+   - Boot from the USB drive (usually F12 or Del during boot)
    - Login with username: `live`, password: `live`
-   - Test your configuration before installing
+
+4. **Test Your Configuration**:
+   
+   Once booted, you'll have access to:
+   
+   **Desktop Environment:**
+   - Hyprland with custom configuration
+   - Waybar status bar
+   - Wofi application launcher
+   
+   **Terminal & Shell:**
+   - Fish shell with all aliases
+   - Zellij terminal multiplexer
+   - Pokemon on startup! 🎮
+   
+   **Development Tools:**
+   - Python with uv, hatch, and all packages
+   - Node.js with npm, yarn, pnpm
+   - Rust with cargo
+   - Go with gopls
+   - Ruby with bundler
+   - Doom Emacs and Neovim
+   
+   **Applications:**
+   - Firefox and Brave browsers
+   - Discord and Zoom
+   - Steam and gaming tools
+   - 1Password (sign in required)
+   - VLC and MPV for media
+   - GIMP, Inkscape, Krita
+   
+   **System Tools:**
+   - Thunar and Nautilus file managers
+   - GParted for disk management
+   - System monitoring tools
+   - Network tools and VPN support
+
+5. **Test Key Features**:
+   
+   **Test Shell Aliases:**
+   ```bash
+   # Test modern replacements
+   ls          # Should use eza
+   cat file    # Should use bat
+   find .      # Should use fd
+   grep text   # Should use ripgrep
+   
+   # Test development aliases
+   gs          # git status
+   py          # python3
+   yt          # yt-dlp
+   ```
+   
+   **Test Applications:**
+   ```bash
+   # Launch applications
+   firefox
+   discord
+   steam
+   1password
+   ```
+   
+   **Test Development:**
+   ```bash
+   # Python development
+   python3 -c "import numpy, pandas, matplotlib; print('Python tools work!')"
+   
+   # Node.js
+   node --version
+   npm --version
+   
+   # Rust
+   rustc --version
+   ```
+
+6. **If You Want to Install**:
+   
+   If you like what you see and want to install:
+   
+   ```bash
+   # Generate hardware config (if needed)
+   sudo nixos-generate-config --show-hardware-config > /tmp/hardware-configuration.nix
+   
+   # Copy your config to the target system
+   sudo cp -r /path/to/your/nixos-config /etc/nixos
+   
+   # Install
+   sudo nixos-install --flake /etc/nixos#hiNotePro
+   ```
+
+7. **Troubleshooting**:
+   
+   If something doesn't work:
+   ```bash
+   # Check system logs
+   journalctl -xe
+   
+   # Check Hyprland logs
+   journalctl --user -f
+   
+   # Test individual packages
+   nix-shell -p package-name
+   ```
 
 ### Option 2: Direct Installation
 

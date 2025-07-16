@@ -53,6 +53,106 @@
       alias vedit="virsh edit"
       alias vinfo="virsh dominfo"
       alias vconsole="virsh console"
+      
+      # Additional system aliases
+      alias ls="eza"
+      alias ll="eza -l"
+      alias la="eza -la"
+      alias lt="eza --tree"
+      alias cat="bat"
+      alias grep="rg"
+      alias find="fd"
+      
+      # Additional development aliases
+      alias yt="yt-dlp"
+      alias ytd="yt-dlp --extract-audio --audio-format mp3"
+      alias ytv="yt-dlp -f bestvideo+bestaudio"
+      
+      # Additional system tools
+      alias sysinfo="inxi -Fxxxz"
+      alias weather="curl wttr.in"
+      alias speedtest="speedtest-cli"
+      
+      # Additional utility aliases
+      alias ports="netstat -tulanp"
+      alias myip="curl ipinfo.io/ip"
+      alias ping="ping -c 5"
+      
+      # Additional development aliases
+      alias gst="git status"
+      alias gco="git checkout"
+      alias gcb="git checkout -b"
+      alias gp="git push"
+      alias gl="git pull"
+      alias gd="git diff"
+      alias gdc="git diff --cached"
+      alias ga="git add"
+      alias gc="git commit -m"
+      
+      # Additional Python aliases
+      alias pipu="pip install --upgrade"
+      alias pipf="pip freeze > requirements.txt"
+      alias pipi="pip install -r requirements.txt"
+      
+      # Additional Node.js aliases
+      alias nrs="npm run start"
+      alias nrd="npm run dev"
+      alias nrb="npm run build"
+      alias nrt="npm run test"
+      
+      # Additional Rust aliases
+      alias cr="cargo run"
+      alias cb="cargo build"
+      alias ct="cargo test"
+      alias cc="cargo check"
+      
+      # Additional Go aliases
+      alias gor="go run"
+      alias gob="go build"
+      alias got="go test"
+      
+      # Additional system monitoring
+      alias mem="free -h"
+      alias disk="df -h"
+      alias cpu="htop"
+      alias gpu="nvidia-smi"
+      
+      # Additional network aliases
+      alias wifi="nmcli device wifi"
+      alias wifilist="nmcli device wifi list"
+      alias wificonnect="nmcli device wifi connect"
+      
+      # Additional file management
+      alias rm="rm -i"
+      alias cp="cp -i"
+      alias mv="mv -i"
+      alias mkdir="mkdir -p"
+      
+      # Additional utility aliases
+      alias ..="cd .."
+      alias ...="cd ../.."
+      alias ....="cd ../../.."
+      alias .....="cd ../../../.."
+      
+      # Additional development aliases
+      alias c="code ."
+      alias n="nvim"
+      alias v="nvim"
+      alias e="emacs"
+      
+      # Additional system aliases
+      alias update="sudo nixos-rebuild switch"
+      alias rebuild="sudo nixos-rebuild switch --flake .#hiNotePro"
+      alias clean="sudo nix-collect-garbage -d"
+      alias search="nix search nixpkgs"
+      
+      # Additional fun aliases
+      alias matrix="cmatrix"
+      alias pipes="pipes.sh"
+      alias ascii="asciiquarium"
+      alias lol="lolcat"
+      alias sl="sl -e"
+      alias oneko="oneko -dog"
     '';
   };
 

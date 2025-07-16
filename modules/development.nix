@@ -7,7 +7,7 @@
     python3 python311 python312 python313 nodejs_20 rustup go gcc
     
     # Package managers
-    cargo yarn npm pipenv poetry uv hatch
+    cargo yarn npm pipenv poetry uv hatch pnpm
     
     # Development utilities
     direnv nix-direnv
@@ -60,7 +60,52 @@
     python3Packages.bandit
     
     # Additional languages
-    deno elixir haskell
+    deno elixir ruby
+    
+    # Additional development tools
+    just # Task runner
+    yazi # Terminal file manager
+    zoxide # Smart cd
+    atuin # Shell history
+    chezmoi # Dotfile manager
+    
+    # Additional Python tools
+    python3Packages.yt-dlp
+    python3Packages.psutil
+    python3Packages.rich
+    python3Packages.click
+    python3Packages.typer
+    
+    # Additional Node.js tools
+    nodePackages.typescript
+    nodePackages.pnpm
+    
+    # Additional Rust tools
+    rust-analyzer
+    
+    # Additional Go tools
+    gopls
+    
+
+    
+    # Additional Ruby tools
+    rubyPackages.bundler
+    rubyPackages.jekyll
+    
+    # Additional development utilities
+    tree-sitter
+    ripgrep-all
+    
+    # Additional debugging tools
+    gdb-common
+    
+    # Additional build tools
+    ninja
+    meson
+    
+    # Additional documentation tools
+    pandoc
+    texlive.combined.scheme-medium
   ];
 
   # Enable direnv

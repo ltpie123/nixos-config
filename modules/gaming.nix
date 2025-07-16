@@ -25,7 +25,7 @@
     mangohud goverlay
     
     # Game launchers
-    heroic gamescope
+    heroic gamescope minecraft-launcher
     
     # Additional gaming tools
     gamemode
@@ -37,6 +37,25 @@
     dolphin-emu
     pcsx2
     rpcs3
+    
+    # Additional gaming tools
+    stockfish # Chess engine
+    
+    # Additional multimedia
+    spotify
+    ncspot # Spotify TUI client
+    
+    # Additional media players
+    mpv
+    vlc
+    
+    # Additional media tools
+    yt-dlp
+    ffmpeg
+    
+    # Additional audio tools
+    cava # Audio visualizer
+    mixxx # DJ software
   ];
   
   # Performance optimizations (handled by razer-blade.nix)

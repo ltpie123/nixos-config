@@ -4,16 +4,16 @@
     git curl wget htop unzip neofetch fastfetch file killall psmisc usbutils pciutils
     
     # File management
-    ripgrep fd fzf bat eza du-dust
+    ripgrep fd fzf bat eza du-dust tree
     
     # System monitoring
-    btop iotop nethogs
+    btop iotop nethogs htop nvtop powertop
     
     # Network tools
-    nmap mtr traceroute
+    nmap mtr traceroute net-tools
     
     # Archive tools
-    zip unzip p7zip
+    zip unzip p7zip xarchiver
     
     # Text processing
     jq yq-go
@@ -22,7 +22,7 @@
     gcc gdb clang valgrind cmake pkg-config
     
     # Container tools
-    docker docker-compose podman
+    docker docker-compose podman lazydocker
     
     # Cloud tools
     kubectl helm terraform
@@ -31,10 +31,43 @@
     openssl gnupg
     
     # Media tools
-    ffmpeg imagemagick
+    ffmpeg imagemagick vlc mpv
     
     # Terminal utilities
-    zellij
+    zellij tmux
+    
+    # Additional utilities
+    brightnessctl playerctl pamixer
+    
+    # File managers
+    thunar thunar-archive-plugin thunar-volman
+    
+    # System tools
+    inxi lsof ncdu
+    
+    # Fun utilities
+    cmatrix asciiquarium lolcat
+    
+    # Additional monitoring
+    lm_sensors
+    
+    # Audio tools
+    pavucontrol
+    
+    # Screenshot and image tools
+    grim slurp swappy
+    
+    # Additional network tools
+    speedtest-cli
+    
+    # Additional text tools
+    tealdeer thefuck
+    
+    # Additional file tools
+    trash
+    
+    # Additional system tools
+    wl-clipboard
   ];
 
   programs.fish.enable = true;

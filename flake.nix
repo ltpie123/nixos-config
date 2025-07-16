@@ -33,6 +33,7 @@
         ./modules/development.nix
         ./modules/razer-blade.nix
         ./modules/virtualization.nix
+        ./modules/applications.nix
         home-manager.nixosModules.home-manager
         {
           home-manager.useUserPackages = true;
@@ -45,16 +46,17 @@
     # Live ISO configuration for testing
     nixosConfigurations.liveIso = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
-      modules = [
-        nixos-generators.nixosModules.all-formats
-        ./modules/common.nix
-        ./modules/hyprland.nix
-        ./modules/gaming.nix
-        ./modules/nvim.nix
-        ./modules/doom-emacs.nix
-        ./modules/development.nix
-        ./modules/razer-blade.nix
-        ./modules/virtualization.nix
+              modules = [
+          nixos-generators.nixosModules.all-formats
+          ./modules/common.nix
+          ./modules/hyprland.nix
+          ./modules/gaming.nix
+          ./modules/nvim.nix
+          ./modules/doom-emacs.nix
+          ./modules/development.nix
+          ./modules/razer-blade.nix
+          ./modules/virtualization.nix
+          ./modules/applications.nix
         home-manager.nixosModules.home-manager
         {
           home-manager.useUserPackages = true;
@@ -101,16 +103,17 @@
       # Live ISO
       live-iso = nixos-generators.nixosGenerate {
         system = "x86_64-linux";
-        modules = [
-          nixos-generators.nixosModules.iso
-          ./modules/common.nix
-          ./modules/hyprland.nix
-          ./modules/gaming.nix
-          ./modules/nvim.nix
-          ./modules/doom-emacs.nix
-          ./modules/development.nix
-          ./modules/razer-blade.nix
-          ./modules/virtualization.nix
+                  modules = [
+            nixos-generators.nixosModules.iso
+            ./modules/common.nix
+            ./modules/hyprland.nix
+            ./modules/gaming.nix
+            ./modules/nvim.nix
+            ./modules/doom-emacs.nix
+            ./modules/development.nix
+            ./modules/razer-blade.nix
+            ./modules/virtualization.nix
+            ./modules/applications.nix
           home-manager.nixosModules.home-manager
           {
             home-manager.useUserPackages = true;
