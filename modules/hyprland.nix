@@ -4,50 +4,50 @@
   environment.systemPackages = with pkgs; [
     # Hyprland essentials
     hyprpaper waybar kitty rofi-wayland grim slurp wl-clipboard
-    
-    # Display and media control
+
+    # Display/media control
     brightnessctl playerctl pavucontrol
-    
-    # Additional Hyprland tools
+
+    # Hyprland tools and utils
     wl-clipboard wl-clipboard-x11
     xdg-utils xdg-desktop-portal-hyprland
-    
-    # Screenshot and recording
+    xdg-desktop-portal
+
+    # Screenshot & recording
     obs-studio
-    
-    # Additional utilities
-    polkit_gnome
-    gnome.gnome-keyring
+
+    # Notifications and usability
+    dunst networkmanagerapplet swww gnome.nautilus gnome.seahorse mako
+
+    # Polkit/keyring
+    polkit_gnome gnome.gnome-keyring
   ];
 
-  # Better display manager
   services.greetd = {
     enable = true;
-    settings = {
-      default_session = {
-        command = "Hyprland";
-        user = "hi";
-      };
+    settings.default_session = {
+      command = "${pkgs.hyprland}/bin/Hyprland";
+      user = "hi";
     };
   };
 
-  # Security and keyring
+  security.pam.services.hyprland.enableGnomeKeyring = true;
   security.pam.services.greetd.enableGnomeKeyring = true;
-  
-  # XDG portal for better app integration
-  xdg.portal = {
-    enable = true;
-    extraPortals = [ pkgs.xdg-desktop-portal-hyprland ];
-  };
-  
-  # Better input handling
+
   services.xserver = {
     enable = true;
     layout = "us";
     xkbVariant = "";
   };
-  
-  # Enable wayland support
+
+  xdg.portal = {
+    enable = true;
+    extraPortals = [
+      pkgs.xdg-desktop-portal
+      pkgs.xdg-desktop-portal-hyprland
+    ];
+  };
+
   environment.sessionVariables = {
     NIXOS_OZONE_WL = "1";
     MOZ_ENABLE_WAYLAND = "1";
